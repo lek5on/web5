@@ -1,1 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>LEK5ON Calculator</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='style.css'>
+    <script>
+        function calculator() {
+           
+           const quantity = Math.abs(document.getElementById('quantity').value);
+           const product = document.getElementById('product').value;
+           
+           
+           let price;
+           if (product === 'item1') {
+               price = 6000000; 
+           } else if (product === 'item2') {
+               price = 235000;
+           } else if (product === 'item3') {
+               price = 500; 
+           }
 
+           
+           const total = quantity * price;
+
+       
+           document.getElementById('total').innerText = 'Итого: ' + total + " рублей";
+       }
+   </script>
+</head>
+<body>
+    <header>
+        <div class="container w-100">
+            <h3 class="pt-4">Калькулятор расчёта криптовалют</h3>
+        </div>
+    </header>
+    <div class="container">
+        <form class="mt-4">
+            <div class="form-group w-50 mx-auto">
+                <label class="text"for="product">Выбрать токен:</label>
+                <select class="form-control text-form" id="product">
+                    <option value="item1">$BTC (Биткоин) - 6.000.000 руб</option>
+                    <option value="item2">$ETH (Эфириум)- 235.000 руб</option>
+                    <option value="item3">$TON (Тонкоин) - 500 руб</option>
+                </select>
+            </div>
+            <div class="form-group w-50  mx-auto">
+                <label class="text"for="quantity">Количество:</label>
+                <input type="number" class="form-control text-form" id="quantity" placeholder="Введите количество товара">
+            </div>
+            
+            <div class="">
+                <div class="text mb-3">
+                    <button type="button" class="btn btn-primary" onclick="calculator()">Произвести расчёт</button>    
+                </div>
+                <div>
+                    <h5 class="text"id="total">Итого: 0 рублей</h5>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="footer text-center text pt-2">
+        <h4 id="контактная-информация">Контактная информация</h4>
+        <h4>@ Савченко А.С.</h4>
+        <p>Почта: lek5on@yandex.ru</p>
+    </div>
+</body>
+</html>
